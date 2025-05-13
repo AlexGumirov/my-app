@@ -37,38 +37,54 @@ function BonusesPage() {
     }
   ];
 
-  const titleLetters = [
-    { img: letterB, alt: "Б" },
-    { img: letterO, alt: "О" },
-    { img: letterN, alt: "Н" },
-    { img: letterU, alt: "У" },
-    { img: letterS, alt: "С" },
-    { img: letterY, alt: "Ы" }
-  ];
-
   return (
     <div className="bonuses-page">
+      {/* Фоновое изображение */}
       <div className="background" style={{ backgroundImage: `url(${backgroundImg})` }}></div>
       
+      {/* Облака */}
       <img src={cloudImg} alt="Облако" className="cloud cloud-1" />
       <img src={cloudImg} alt="Облако" className="cloud cloud-2" />
       
+      {/* Собачка */}
       <div className="character-container">
         <img src={dogImg} alt="Собачка" className="character" />
       </div>
       
-      {/* Заголовок из картинок */}
-      <div className="bonuses-title">
-        {titleLetters.map((letter, index) => (
-          <img 
-            key={index}
-            src={letter.img}
-            alt={letter.alt}
-            className="title-letter"
-          />
-        ))}
+      {/* Заголовок "БОНУСЫ" в форме радуги */}
+      <div className="rainbow-title">
+        {/* Буква Б */}
+        <div className="letter-container" style={{ left: '100px', bottom: '10px' }}>
+          <img src={letterB} alt="Б" className="title-letter" />
+        </div>
+        
+        {/* Буква О */}
+        <div className="letter-container" style={{ left: '150px', bottom: '55px' }}>
+          <img src={letterO} alt="О" className="title-letter" />
+        </div>
+        
+        {/* Буква Н */}
+        <div className="letter-container" style={{ left: '220px', bottom: '75px' }}>
+          <img src={letterN} alt="Н" className="title-letter" />
+        </div>
+        
+        {/* Буква У */}
+        <div className="letter-container" style={{ left: '300px', bottom: '80px' }}>
+          <img src={letterU} alt="У" className="title-letter" />
+        </div>
+        
+        {/* Буква С */}
+        <div className="letter-container" style={{ left: '365px', bottom: '65px' }}>
+          <img src={letterS} alt="С" className="title-letter" />
+        </div>
+        
+        {/* Буква Ы */}
+        <div className="letter-container" style={{ left: '425px', bottom: '15px' }}>
+          <img src={letterY} alt="Ы" className="title-letter" />
+        </div>
       </div>
       
+      {/* Список бонусов */}
       <div className="bonuses-list">
         {bonuses.map((bonus, index) => (
           <BonusItem key={index} title={bonus.title} description={bonus.description} />
